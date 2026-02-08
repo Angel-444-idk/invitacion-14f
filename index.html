@@ -2,8 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para ti 💖</title>
+  <title>Para alguien muy especial 💖</title>
+
+  <!-- Mobile first -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4d6d">
+
+  <!-- SEO básico -->
+  <meta name="description" content="Una invitación muy especial para el 14 de febrero 💘">
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,53 +18,94 @@
 
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 
-<main class="container">
+  <!-- Fondo decorativo (semántico) -->
+  <div aria-hidden="true"></div>
 
-  <!-- LOGIN -->
-  <section id="login" class="glass">
-    <h1>💌 Acceso privado</h1>
-    <p>Solo alguien muy especial puede entrar</p>
+  <main class="container">
 
-    <input type="password" id="password" placeholder="Contraseña">
-    <button id="loginBtn">Entrar</button>
+    <!-- 🔐 LOGIN -->
+    <section id="login" class="glass" role="dialog" aria-labelledby="login-title">
 
-    <span id="error"></span>
-  </section>
+      <header>
+        <h1 id="login-title">💌 Acceso privado</h1>
+        <p>Solo alguien muy especial puede continuar</p>
+      </header>
 
-  <!-- CONTENIDO -->
-  <section id="content" class="glass hidden">
+      <form onsubmit="return false;">
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="Ingresa la contraseña"
+          autocomplete="off"
+          aria-label="Contraseña"
+        >
 
-    <audio id="music" src="assets/music/huracan.mp3"></audio>
+        <button type="button" id="loginBtn">
+          Entrar 💖
+        </button>
+      </form>
 
-    <h1>Para el amor de mi vida 💘</h1>
+      <small id="error"></small>
 
-    <p class="text">
-      Desde que llegaste, todo tiene más sentido.
-      Este 14 de febrero quiero compartirlo contigo
-      de una forma especial.
-    </p>
+    </section>
 
-    <div class="gallery">
-      <img src="assets/images/foto1.jpg" alt="Nosotros">
-      <img src="assets/images/foto2.jpg" alt="Nosotros">
-      <img src="assets/images/foto3.jpg" alt="Nosotros">
-    </div>
+    <!-- 💖 CONTENIDO PRINCIPAL -->
+    <section id="content" class="glass hidden" aria-live="polite">
 
-    <p class="question">¿Te gustaría ser mi Valentine? 💕</p>
+      <!-- Audio -->
+      <audio id="music" preload="auto">
+        <source src="assets/music/huracan.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
 
-    <div class="actions">
-      <button class="yes">Sí 💖</button>
-      <button class="yes">Claro que sí 💕</button>
-    </div>
+      <!-- Encabezado -->
+      <header>
+        <h1>Para el amor de mi vida 💘</h1>
+        <p class="text">
+          Desde que llegaste, todo cambió.
+          Esta es solo una pequeña forma de decirte
+          lo importante que eres para mí.
+        </p>
+      </header>
 
-    <p id="response"></p>
+      <!-- Galería -->
+      <section class="gallery" aria-label="Nuestros momentos">
+        <figure>
+          <img src="assets/images/foto1.jpg" alt="Nuestro recuerdo 1">
+        </figure>
+        <figure>
+          <img src="assets/images/foto2.jpg" alt="Nuestro recuerdo 2">
+        </figure>
+        <figure>
+          <img src="assets/images/foto3.jpg" alt="Nuestro recuerdo 3">
+        </figure>
+      </section>
 
-  </section>
+      <!-- Pregunta -->
+      <section>
+        <p class="question">
+          ¿Te gustaría ser mi Valentine este 14 de febrero? 💕
+        </p>
+      </section>
 
-</main>
+      <!-- Acciones -->
+      <section class="actions">
+        <button class="yes">Sí 💖</button>
+        <button class="yes">Claro que sí 💕</button>
+      </section>
 
-<script src="js/app.js"></script>
+      <!-- Respuesta -->
+      <footer>
+        <p id="response"></p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
