@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<main class="container">
+
+  <!-- LOGIN -->
+  <section id="login" class="glass">
+    <h1>💌 Acceso privado</h1>
+    <p>Solo alguien muy especial puede entrar</p>
+
+    <input type="password" id="password" placeholder="Contraseña">
+    <button id="loginBtn">Entrar</button>
+
+    <span id="error"></span>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section id="content" class="glass hidden">
+
+    <audio id="music" src="assets/music/huracan.mp3"></audio>
+
+    <h1>Para el amor de mi vida 💘</h1>
+
+    <p class="text">
+      Desde que llegaste, todo tiene más sentido.
+      Este 14 de febrero quiero compartirlo contigo
+      de una forma especial.
+    </p>
+
+    <div class="gallery">
+      <img src="assets/images/foto1.jpg" alt="Nosotros">
+      <img src="assets/images/foto2.jpg" alt="Nosotros">
+      <img src="assets/images/foto3.jpg" alt="Nosotros">
+    </div>
+
+    <p class="question">¿Te gustaría ser mi Valentine? 💕</p>
+
+    <div class="actions">
+      <button class="yes">Sí 💖</button>
+      <button class="yes">Claro que sí 💕</button>
+    </div>
+
+    <p id="response"></p>
+
+  </section>
+
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

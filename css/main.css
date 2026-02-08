@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(120deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 15px 0;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff1f4d;
+  transform: scale(1.03);
+}
+
+.hidden {
+  display: none;
+}
+
+.text, .question {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+#response {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* ❤️ CORAZONES */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* ✨ ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#content {
+  animation: slideUp 1s ease;
+}
+
+.celebrate {
+  animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  .container {
+    max-width: 360px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .text, .question {
+    font-size: 15px;
+  }
+
+  .gallery {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
