@@ -2,110 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para alguien muy especial 💖</title>
-
-  <!-- Mobile first -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ff4d6d">
-
-  <!-- SEO básico -->
-  <meta name="description" content="Una invitación muy especial para el 14 de febrero 💘">
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <title>Para Ti ❤️</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
 
-  <!-- Fondo decorativo (semántico) -->
-  <div aria-hidden="true"></div>
+  <div class="container">
+    <div class="glass" id="login">
+      <h1>💖 Hola amor 💖</h1>
+      <p>Ingresa la contraseña para descubrir algo especial</p>
+      <input type="password" id="password" placeholder="Contraseña">
+      <button onclick="checkPassword()">Entrar</button>
+    </div>
 
-  <main class="container">
+    <div class="glass hidden" id="content">
+      <h1>🌹 Feliz 14 de Febrero 🌹</h1>
+      <p>Gracias por ser parte de mi vida, te amo ❤️</p>
 
-    <!-- 🔐 LOGIN -->
-    <section id="login" class="glass" role="dialog" aria-labelledby="login-title">
+      <div class="gallery">
+        <img src="assets/images/foto1.jpg" alt="Nosotros">
+        <img src="assets/images/foto2.jpg" alt="Nosotros">
+        <img src="assets/images/foto3.jpg" alt="Nosotros">
+      </div>
 
-      <header>
-        <h1 id="login-title">💌 Acceso privado</h1>
-        <p>Solo alguien muy especial puede continuar</p>
-      </header>
+      <audio id="music" src="assets/music/huracan.mp3"></audio>
+      <button onclick="playMusic()">🎵 Reproducir nuestra canción</button>
+    </div>
+  </div>
 
-      <form onsubmit="return false;">
-        <input 
-          type="password" 
-          id="password" 
-          placeholder="Ingresa la contraseña"
-          autocomplete="off"
-          aria-label="Contraseña"
-        >
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('password').value;
+      if (pass === "25112025") {
+        document.getElementById('login').classList.add('hidden');
+        document.getElementById('content').classList.remove('hidden');
+      } else {
+        alert("Contraseña incorrecta 💔");
+      }
+    }
 
-        <button type="button" id="loginBtn">
-          Entrar 💖
-        </button>
-      </form>
+    function playMusic() {
+      document.getElementById('music').play();
+    }
+  </script>
 
-      <small id="error"></small>
-
-    </section>
-
-    <!-- 💖 CONTENIDO PRINCIPAL -->
-    <section id="content" class="glass hidden" aria-live="polite">
-
-      <!-- Audio -->
-      <audio id="music" preload="auto">
-        <source src="assets/music/huracan.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-      </audio>
-
-      <!-- Encabezado -->
-      <header>
-        <h1>Para el amor de mi vida 💘</h1>
-        <p class="text">
-          Desde que llegaste, todo cambió.
-          Esta es solo una pequeña forma de decirte
-          lo importante que eres para mí.
-        </p>
-      </header>
-
-      <!-- Galería -->
-      <section class="gallery" aria-label="Nuestros momentos">
-        <figure>
-          <img src="assets/images/foto1.jpg" alt="Nuestro recuerdo 1">
-        </figure>
-        <figure>
-          <img src="assets/images/foto2.jpg" alt="Nuestro recuerdo 2">
-        </figure>
-        <figure>
-          <img src="assets/images/foto3.jpg" alt="Nuestro recuerdo 3">
-        </figure>
-      </section>
-
-      <!-- Pregunta -->
-      <section>
-        <p class="question">
-          ¿Te gustaría ser mi Valentine este 14 de febrero? 💕
-        </p>
-      </section>
-
-      <!-- Acciones -->
-      <section class="actions">
-        <button class="yes">Sí 💖</button>
-        <button class="yes">Claro que sí 💕</button>
-      </section>
-
-      <!-- Respuesta -->
-      <footer>
-        <p id="response"></p>
-      </footer>
-
-    </section>
-
-  </main>
-
-  <script src="js/app.js"></script>
+  <script src="js/hearts.js"></script>
 </body>
 </html>
